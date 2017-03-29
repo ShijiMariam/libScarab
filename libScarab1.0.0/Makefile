@@ -1,6 +1,6 @@
 CC       = gcc
 CFLAGS   = -Wall -g3 -ggdb -std=c99 -I/usr/local/include -I/usr/local/include/libflint -L/usr/local/lib
-LDFLAGS += -lgmp -lflint
+LDFLAGS += -lgmp -lflint -lm
 SOURCE   = $(shell find * -name '*.c')
 OBJECTS  = $(SOURCE:.c=.o)
 .PHONY:    clean
@@ -12,4 +12,3 @@ integer-fhe: $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) integer-fhe
-
