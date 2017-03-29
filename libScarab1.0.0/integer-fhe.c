@@ -265,7 +265,6 @@ fhe_encrypt(mpz_t c, fhe_pk_t pk, int m)
 	gmp_randclear(randstate);
 }
 
-
 int
 fhe_decrypt(mpz_t c, fhe_sk_t sk)
 {
@@ -317,7 +316,6 @@ fhe_decrypt(mpz_t c, fhe_sk_t sk)
 	return m;
 }
 
-
 void
 fhe_add(mpz_t res, mpz_t a, mpz_t b, fhe_pk_t pk)
 {
@@ -326,7 +324,6 @@ fhe_add(mpz_t res, mpz_t a, mpz_t b, fhe_pk_t pk)
 	fhe_recrypt(res, pk);
 }
 
-
 void
 fhe_mul(mpz_t res, mpz_t a, mpz_t b, fhe_pk_t pk)
 {
@@ -334,7 +331,6 @@ fhe_mul(mpz_t res, mpz_t a, mpz_t b, fhe_pk_t pk)
 	mpz_mod(res, res, pk->p);
 	fhe_recrypt(res, pk);
 }
-
 
 void
 fhe_fulladd(mpz_t sum, mpz_t c_out, mpz_t a, mpz_t b, mpz_t c_in, fhe_pk_t pk)
@@ -353,7 +349,6 @@ fhe_fulladd(mpz_t sum, mpz_t c_out, mpz_t a, mpz_t b, mpz_t c_in, fhe_pk_t pk)
 	
 	mpz_clear(temp);
 }
-
 
 void
 fhe_halfadd(mpz_t sum, mpz_t c_out, mpz_t a, mpz_t b, fhe_pk_t pk)
